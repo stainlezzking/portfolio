@@ -1,0 +1,60 @@
+.full {
+    position: relative;
+    display: block;
+    height: 100vh;
+    background-color: #555;
+}
+svg {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.line {
+    stroke: white;
+    stroke-width: 2px;
+    fill: transparent;
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+    animation: animate 5s linear infinite;
+    
+}
+@keyframes animate {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.loading {
+    display: flex;
+    max-width: 250px;
+    position: absolute;
+    top: 67%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.loading span {
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 5px .5rem;
+    animation: bubble 1.3s linear infinite;
+}
+.loading .dot2 {
+    animation-delay: .4s;
+}
+.loading .dot3{
+    animation-delay: .6s;
+}
+@keyframes bubble {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(3);
+    }
+}
