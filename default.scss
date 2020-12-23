@@ -1,0 +1,336 @@
+@font-face {
+    font-family: "myFirstFont";
+    src: url("../Font/Montserrat-Medium.ttf");
+}
+
+:root{
+    --bgColor : #003663;;
+    --textColor : white;
+    --textColorDark : #e6e2e7;
+    --bgdarken : linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)) ;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    line-height: 1.3rem;
+    color: var(--textColorDark);
+    font-family: "myFirstFont";
+}
+
+$bigFont : 1.5rem ;
+$red : #008c4e;
+$red_dark : #cb003d;
+$littleSpace : 1rem;
+$sectionPadding :2rem 3rem;
+
+
+.full {
+    position: fixed;
+    display: block;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #555;
+    z-index: 100;
+}
+.svg {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.line {
+    stroke: white;
+    stroke-width: 2px;
+    fill: transparent;
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+    animation: animate 5s linear infinite;
+    
+}
+@keyframes animate {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.loading {
+    display: flex;
+    max-width: 250px;
+    position: absolute;
+    top: 67%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.loading span {
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 5px .5rem;
+    animation: bubble 1.3s linear infinite;
+}
+.loading .dot2 {
+    animation-delay: .4s;
+}
+.loading .dot3{
+    animation-delay: .6s;
+}
+@keyframes bubble {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(3);
+    }
+}
+
+
+/* ######################### page starts ################################ */
+/* ######### Remember to change the font ##########*/
+body {
+    background-color: var(--bgColor);
+}
+.title {
+    font-weight: bold;
+    font-size: 2rem;
+    color: var(--textColor);
+}
+// wrapper design targets the indentation of the page
+.wrapper{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-image: var(--bgColor);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .4rem 3rem;
+    background-image: var(--bgdarken);
+    .nav_logo{
+        img {
+            height: 40px;
+        }
+    }
+    .nav_items {
+        display: flex;
+        list-style-type: none;
+        
+    }
+    li{
+        margin: 0 .4rem;
+        font-size: 1.3rem;
+        a {
+            display: block;
+            text-decoration: none;
+            color: #008c4e;
+            &:hover, i:hover {
+                color: darken(#cb003d, 10deg) !important;
+            }
+        }
+    }
+
+}
+
+//  BAnner dont get sectionSidePadding
+.banner {
+    position : relative;
+    display: flex;
+    background-position: center;
+    height: 400px;
+    align-items: center;
+    justify-content: space-around;
+    
+    img{
+        width: 35%;  
+    }
+    .caption {
+       font-size: 1.7rem;
+       width: 45%;
+       color: var(--textColor);
+       letter-spacing: 1.5px;
+    }
+    .caption p {
+        font-size: 1.5em;
+        margin-bottom: $littleSpace * 2;
+        color: var(--textColor);
+    }
+    button {
+        display: block;
+        padding: .7rem 1.1rem;
+        margin-top: $littleSpace * 3 ;
+        font-size:$bigFont ;
+        border-radius: .3rem;
+        border: none;
+        cursor: pointer;
+        background-color: $red;
+        color: white;
+        &:hover{
+            background-color: $red_dark;
+        }
+    }
+}
+
+
+// ########## About Section #########
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $sectionPadding;
+    background-image: var(--bgdarken);
+    box-shadow:0 0 10px darken($color: #003663 , $amount: 10);
+    h2{
+        padding: .4rem;
+        margin-bottom: $littleSpace;
+    }
+    img {
+        height: 120px;
+        width: 120px;
+        margin-bottom: $littleSpace;
+    }
+    p {
+        text-align: center;
+    }
+}
+
+// ########## Skilss Section ######
+.skills{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0 $sectionPadding;
+   .title {
+       align-self: center;
+       margin-bottom: $littleSpace;
+   }
+    ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+    }
+    .hundred {
+        flex-basis: 100%;
+        height: 0;
+    }
+    li {
+        position: relative;
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $red;
+        margin: $littleSpace/2 0;
+        box-shadow: 0px 0px 4px #777;
+
+        .round_line{
+            position: absolute;
+            height: 90%;
+            width: 90%;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 0 0 6px var(--textColorDark);
+            
+            &::after{
+                content : "";
+                display: block;
+                padding: 8px;
+                position: absolute;
+                left: 30%;
+                top: -5px;
+                background-color: $red;
+            }
+        } 
+        p {
+            color: white;
+            margin-top: 5px;
+        }
+    }
+}
+
+//  #############status section################
+.status {
+    padding: $sectionPadding;
+    box-shadow:0 0 10px darken($color: #003663 , $amount: 10);
+    margin-bottom: 1rem;
+    background-image: var(--bgdarken);
+    letter-spacing: 1.01px;
+    h3 {
+        padding: $littleSpace;
+        span {
+            color: lightgreen;
+        }
+    }
+  blockquote {
+      padding-left: $littleSpace*4;
+      font-style: italic;
+      font-size: .8em;
+    }
+ svg {
+     width: 25px;
+     display: inline-block;
+    margin-right: 1rem;
+   }
+   
+ #second {
+     display: block;
+     margin-left: auto;
+ }
+}
+
+
+// ########### Projects section ################
+
+.projects {
+    padding: $sectionPadding;
+    display: flex;
+    flex-wrap: wrap;
+    .title {
+        padding: 1rem;
+        text-align: center;
+        flex-basis: 100%;
+    }
+    .project {
+        width: 30%;
+        box-shadow:0 0 10px darken($color: #003663 , $amount: 10);
+        border-radius: .5rem;
+        img {
+            width: 100%;
+            height: 100px;
+        }
+        .project_body{
+            padding: 1rem;
+        }
+    }
+    
+}
+
+// ########### FOOTER ################
+
+footer {
+    background-image:var(--bgdarken);
+    padding: $littleSpace;
+    display: flex;
+    justify-content: center;
+    p {
+        color: white;
+
+    }
+
+}
