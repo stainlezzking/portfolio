@@ -7,13 +7,13 @@
   --textColor: white;
   --textColorDark: #e6e2e7;
   --bgdarken: #083458;
+  --sectionpadding: 2em 3rem;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  line-height: 1.3rem;
   color: var(--textColorDark);
   font-family: "myFirstFont";
 }
@@ -117,7 +117,7 @@ body {
   padding: 0.4rem 3rem;
   background-color: var(--bgdarken);
 }
-.nav .nav_logo img {
+.nav img {
   height: 40px;
 }
 .nav .nav_items {
@@ -138,12 +138,10 @@ body {
 }
 
 .banner {
-  position: relative;
   display: flex;
-  background-position: center;
-  height: 400px;
   align-items: center;
   justify-content: space-around;
+  padding: 2rem 0;
 }
 .banner img {
   width: 35%;
@@ -151,7 +149,7 @@ body {
 .banner .caption {
   font-size: 1.7rem;
   width: 45%;
-  color: var(--textColor);
+  color: var(--textColorDark);
   letter-spacing: 1.5px;
 }
 .banner .caption p {
@@ -178,8 +176,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 3rem;
-  background-image: linear-gradient(#00000033, #00000033);
+  padding: var(--sectionpadding);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
   box-shadow: 0 0 10px #001a30;
 }
 .about h2 {
@@ -198,7 +196,7 @@ body {
 .skills {
   display: flex;
   flex-direction: column;
-  padding: 2rem 0 2rem 3rem;
+  padding: 2rem 0 var(--sectionpadding);
 }
 .skills .title {
   align-self: center;
@@ -252,10 +250,10 @@ body {
 }
 
 .status {
-  padding: 2rem 3rem;
+  padding: var(--sectionpadding);
   box-shadow: 0 0 10px #001a30;
   margin-bottom: 1rem;
-  background-image: linear-gradient(#00000033, #00000033);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
   letter-spacing: 1.01px;
 }
 .status h3 {
@@ -280,7 +278,7 @@ body {
 }
 
 .projects {
-  padding: 2rem 3rem;
+  padding: var(--sectionpadding);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -373,4 +371,73 @@ footer p span {
   font-size: 1.5em;
   display: inline-block;
   margin-right: 0.2rem;
+}
+
+@media screen and (max-width: 850px) {
+  :root {
+    --sectionpadding: 1rem ;
+  }
+
+  body {
+    background-position: left;
+  }
+
+  .project {
+    flex-basis: 40%;
+    margin: 1rem auto;
+    min-width: 300px;
+  }
+}
+@media screen and (max-width: 770px) {
+  .nav {
+    padding: 0.4rem 5px;
+  }
+  .nav li {
+    font-size: 1rem;
+  }
+  .nav img {
+    height: 30px;
+  }
+
+  .title {
+    font-size: 1.7rem;
+  }
+
+  .banner {
+    display: flex;
+    flex-direction: column;
+  }
+  .banner img, .banner .caption {
+    width: 95%;
+    max-width: 400px;
+  }
+  .banner .caption {
+    font-size: 1.4rem;
+    color: var(--textColorDark);
+    letter-spacing: 1.5px;
+    padding: var(--sectionpadding);
+  }
+  .banner .caption p {
+    color: #008c4e;
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+    color: var(--textColor);
+    text-align: center;
+  }
+  .banner button {
+    font-size: 1.2rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .projects {
+    justify-content: center;
+  }
+  .projects .project {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .status blockquote {
+    padding-left: 1rem;
+  }
 }

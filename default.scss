@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: "myFirstFont";
     src: url("../Font/Montserrat-Medium.ttf");
@@ -8,12 +9,12 @@
     --textColor : white;
     --textColorDark : #e6e2e7;
     --bgdarken : #083458;
+    --sectionpadding : 2em 3rem;
 }
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    line-height: 1.3rem;
     color: var(--textColorDark);
     font-family: "myFirstFont";
 }
@@ -23,9 +24,9 @@ $bigFont : 1.5rem ;
 $red : #008c4e;
 $red_dark : #cb003d;
 $littleSpace : 1rem;
-$sectionPadding :2rem 3rem;
+$sectionPadding : var(--sectionpadding);
 
-
+//  preloader styles
 .full {
     position: fixed;
     display: block;
@@ -96,7 +97,6 @@ $sectionPadding :2rem 3rem;
 /* ######################### page starts ################################ */
 /* ######### Remember to change the font ##########*/
 
-// ### MAKE YOUR MEDIA QUERIES HERE AT TOP
 
 body {
     background-color: var(--bgColor);
@@ -123,11 +123,10 @@ body {
     align-items: center;
     padding: .4rem 3rem;
     background-color: var(--bgdarken);
-    .nav_logo{
         img {
             height: 40px;
         }
-    }
+
     .nav_items {
         display: flex;
         list-style-type: none;
@@ -150,13 +149,10 @@ body {
 
 //  BAnner dont get sectionSidePadding
 .banner {
-    position : relative;
     display: flex;
-    background-position: center;
-    height: 400px;
     align-items: center;
     justify-content: space-around;
-    
+    padding: 2rem 0;
     img{
         width: 35%;  
  
@@ -164,7 +160,7 @@ body {
     .caption {
        font-size: 1.7rem;
        width: 45%;
-       color: var(--textColor);
+       color: var(--textColorDark);
        letter-spacing: 1.5px;
     }
     .caption p {
@@ -414,3 +410,85 @@ footer {
 
 
 // ### MAKE YOUR MEDIA QUERIES AT THE TOP 
+
+// media Query for medium screen
+
+@media screen and (max-width:850px){
+    //projects to diaplay two twos on one line
+    :root {
+        --sectionpadding : 1rem ;
+    }
+    body {
+        background-position: left;
+    }
+
+    .project {
+        flex-basis: 40%;
+        margin: 1rem auto;
+        // i dont like how the first twpo element almost kiss before they seperate
+        min-width: 300px;
+    }
+}
+
+
+@media screen and (max-width:770px){
+    .nav {
+        padding : .4rem 5px ;
+        li {
+            font-size: 1rem;
+        }
+        img {
+            height: 30px;
+        }
+    }
+    .title {
+        font-size: 1.7rem;
+    }
+
+    // banner section #######
+    .banner {
+     display: flex;
+     flex-direction: column;
+     
+     // setting up caption, fonts size reduced
+     img, .caption{
+         width: 95%;
+         max-width: 400px;
+     }
+     .caption {
+        font-size: 1.4rem;
+        color: var(--textColorDark);
+        letter-spacing: 1.5px;
+        padding: var(--sectionpadding);
+        
+     }
+     .caption p {
+         color: $red;
+         font-size: 1.5em;
+         margin-bottom: $littleSpace;
+         color: var(--textColor);
+         text-align: center;
+     }
+     button {
+         font-size: 1.2rem;
+        padding: .5rem .8rem;
+     }
+    }
+
+
+// project sectino
+.projects{
+    justify-content: center;
+    .project {
+        width: 100%;
+        max-width: 300px;
+    }
+
+}
+
+    .status {
+        blockquote {
+            padding-left: 1rem;
+        }
+    }
+}
