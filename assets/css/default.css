@@ -27,6 +27,7 @@
   left: 0;
   right: 0;
   background-color: #555;
+  background-color: #008c4e;
   z-index: 100;
 }
 
@@ -172,6 +173,7 @@ body {
   background-color: #cb003d;
 }
 
+/* ########## About Section ######### */
 .about {
   display: flex;
   flex-direction: column;
@@ -313,7 +315,7 @@ body {
   width: 100%;
   height: 100%;
   opacity: 0;
-  background-color: #00000098;
+  background-color: rgba(0, 0, 0, 0.596);
   transition: 0.5s ease-in-out;
 }
 .projects .img_btn_cont:hover::before {
@@ -390,10 +392,10 @@ footer p span {
 }
 @media screen and (max-width: 770px) {
   .nav {
-    padding: 0.4rem 5px;
+    padding: 0.4rem 10px;
   }
   .nav li {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   .nav img {
     height: 30px;
@@ -411,6 +413,10 @@ footer p span {
     width: 95%;
     max-width: 400px;
   }
+  .banner span {
+    min-height: 53px;
+    display: inline-block;
+  }
   .banner .caption {
     font-size: 1.4rem;
     color: var(--textColorDark);
@@ -418,10 +424,8 @@ footer p span {
     padding: var(--sectionpadding);
   }
   .banner .caption p {
-    color: #008c4e;
     font-size: 1.5em;
     margin-bottom: 1rem;
-    color: var(--textColor);
     text-align: center;
   }
   .banner button {
@@ -439,5 +443,19 @@ footer p span {
 
   .status blockquote {
     padding-left: 1rem;
+  }
+}
+@media screen and (max-width: 330px) {
+  /* so the typing dont displace other elements */
+  .banner span {
+    min-height: 74px;
+    display: inline-block;
+  }
+  .banner .caption p {
+    font-size: 1.35em;
+  }
+
+  .projects .project {
+    min-width: 100%;
   }
 }

@@ -36,6 +36,7 @@ $sectionPadding : var(--sectionpadding);
     left: 0;
     right: 0;
     background-color: #555;
+    background-color: $red;
     z-index: 100;
 }
 .svg {
@@ -167,7 +168,12 @@ body {
         font-size: 1.5em;
         margin-bottom: $littleSpace * 2;
         color: var(--textColor);
+        // span.paddingR is a css for jvs blinker, its been toggled in the jvs
     }
+
+    // span.paddingR {
+    //     border-right: 2px solid #ffffffa8;
+    // }
     button {
         display: block;
         padding: .7rem 1.1rem;
@@ -185,7 +191,7 @@ body {
 }
 
 
-// ########## About Section #########
+/* ########## About Section ######### */
 
 .about {
     display: flex;
@@ -338,7 +344,7 @@ body {
             width: 100%;
             height: 100%;
             opacity: 0;
-            background-color: #00000098;
+            background-color: rgba(0, 0, 0, 0.596);
             transition: .5s ease-in-out;
         }
         &:hover::before {
@@ -433,9 +439,9 @@ footer {
 
 @media screen and (max-width:770px){
     .nav {
-        padding : .4rem 5px ;
+        padding : .4rem 10px ;
         li {
-            font-size: 1rem;
+            font-size: 1.2rem;
         }
         img {
             height: 30px;
@@ -455,6 +461,10 @@ footer {
          width: 95%;
          max-width: 400px;
      }
+     span {
+        min-height: 53px;
+        display: inline-block;
+    }
      .caption {
         font-size: 1.4rem;
         color: var(--textColorDark);
@@ -463,10 +473,8 @@ footer {
         
      }
      .caption p {
-         color: $red;
          font-size: 1.5em;
          margin-bottom: $littleSpace;
-         color: var(--textColor);
          text-align: center;
      }
      button {
@@ -489,6 +497,26 @@ footer {
     .status {
         blockquote {
             padding-left: 1rem;
+        }
+    }
+}
+
+
+@media screen and (max-width:330px){
+    /* so the typing dont displace other elements */
+
+    .banner {
+        span {
+            min-height: 74px;
+            display: inline-block;
+        }
+        .caption p {
+            font-size: 1.35em;
+        }
+    }
+    .projects {
+        .project {
+            min-width: 100%;
         }
     }
 }
