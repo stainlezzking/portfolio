@@ -117,6 +117,12 @@ body {
   align-items: center;
   padding: 0.4rem 3rem;
   background-color: var(--bgdarken);
+  position: fixed;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  z-index: 90;
+  transition: top 0.4s;
 }
 .nav img {
   height: 40px;
@@ -146,6 +152,7 @@ body {
 }
 .banner img {
   width: 35%;
+  margin-top: 40px;
 }
 .banner .caption {
   font-size: 1.7rem;
@@ -186,13 +193,31 @@ body {
   padding: 0.4rem;
   margin-bottom: 1rem;
 }
-.about img {
+.about #laptop {
   height: 120px;
   width: 120px;
   margin-bottom: 1rem;
 }
+.about .me {
+  display: block;
+  height: 0;
+  transition: height 0.8s ease-out;
+}
+.about .show_me_picture {
+  height: 300px;
+  margin: 1rem;
+}
 .about p {
   text-align: center;
+}
+.about p i {
+  cursor: pointer;
+  display: block;
+  color: #008c4e;
+  font-size: 1.4rem;
+}
+.about p i:hover {
+  color: #cb003d;
 }
 
 .skills {
@@ -303,6 +328,14 @@ body {
 .projects .project .project_body {
   padding: 1rem;
   background-color: var(--bgdarken);
+}
+.projects .project .project_body .built_with {
+  padding-top: 0.3rem;
+  border-top: 2px dashed rgba(255, 255, 255, 0.448);
+  margin-top: 0.4rem;
+}
+.projects .project .project_body .built_with i {
+  color: white;
 }
 .projects .img_btn_cont {
   height: 150px;
