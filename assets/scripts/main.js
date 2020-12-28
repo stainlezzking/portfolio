@@ -61,7 +61,12 @@ window.onscroll = function(){
    let pos = document.querySelector(".about .me").getBoundingClientRect()
    let ele = document.querySelector(".about .me").pageYOffset
    console.log(pos.width,pos.height , ele)
-
+    
+   if(window.pageYOffset > 1000){
+        document.querySelector(".backToTop").style.display = "block"
+    }else{
+        document.querySelector(".backToTop").style.display = "none"
+    }
 }
 //  add typing effect  
 // add a drop down in the about section, this will also lazy load the image

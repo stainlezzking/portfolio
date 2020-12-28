@@ -446,6 +446,19 @@ footer {
 
 }
 
+.backToTop{
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem;
+    background-color: $red;
+    padding: 5px 7px;
+    border-radius: 50%;
+    display: none;
+    opacity: .9;
+    svg {
+        fill: $red_dark;
+    }
+}
 
 // ### MAKE YOUR MEDIA QUERIES AT THE TOP 
 
