@@ -23,9 +23,9 @@ const typing = ()=>{
 typing();
 // ###########################################
 
-//  drop down Feature
+//  drop down Feature to show picture
 
-let toggleMe = document.querySelector("section.about p i")
+let toggleMe = document.querySelector("section.about p span")
 let mePicture = document.querySelector("section.about img.me")
 
 toggleMe.addEventListener("click", ()=>{
@@ -58,17 +58,27 @@ window.onscroll = function(){
         prevScrollPos = window.pageYOffset
     }
     // check if element is in viewport
-   let pos = document.querySelector(".about .me").getBoundingClientRect()
-   let ele = document.querySelector(".about .me").pageYOffset
-   console.log(pos.width,pos.height , ele)
-    
    if(window.pageYOffset > 1000){
         document.querySelector(".backToTop").style.display = "block"
     }else{
         document.querySelector(".backToTop").style.display = "none"
     }
+    if(mePicture.getBoundingClientRect().bottom < 0){
+        mePicture.classList.remove("show_me_picture")
+    }
 }
+
+if(window.innerWidth >= 770){
+    document.querySelectorAll(".project").forEach(project=>{
+       let delay = project.getAttribute("data-customDelay")
+        project.setAttribute("data-aos-delay", delay)
+    })
+}
+
+
 //  add typing effect  
 // add a drop down in the about section, this will also lazy load the image
 // make the nav fixed and display on scroll up
-// remember to convert into normal jvs using babel fotr compatibility
+// remember to convert into normal jvs using babel fotr compatibility and add 
+// ^ add prefix for the css using prefixer
+// thinking of adding progress bar or is it too much ?

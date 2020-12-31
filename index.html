@@ -8,8 +8,7 @@
 	<link rel="stylesheet" href="./assets/fontawesome/css/all.css">
 	<link rel="stylesheet" href="./assets/css/normalize.css">
 	<link rel="stylesheet" href="./assets/css/default.css">
-	 <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
-
+	<link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
 </head>
 
 <body>
@@ -74,7 +73,8 @@
 			<p>
 				Hi, I am a front-end determined fullstack developer. I love building projects and solving problems.
 				I am reasourceful developer as my target is customers satisfaction and will use every means in my power to acheive it.
-				<i class="fa fa-plus-circle" aria-hidden="true"  title="view my picture"></i>
+				<br>
+				<span title="view my picture"> view picture</span>
 			</p	>
 			<div class="me_parent_container" style="position:relative">
 				<div class="loading" style="display: none ; top:50%;">
@@ -92,32 +92,32 @@
 		<section class="skills">
 			<h2 class="title" data-aos="fade-in" data-aos-duration="800"> Web skills</h2>
 			<ul>
-				<li class="skill">
+				<li class="skill" data-aos="roll-in-right">
 					<div class="round_line" style=" border:4px solid #f96323;"></div>
 					<i class="fab fa-html5 fa-2x" style="color: #f96323;" aria-hidden="true"></i>
 					<p> HTML5</p>
 				</li>
-				<li class="skill">
+				<li class="skill" data-aos="roll-in-right">
 					<div class="round_line"style=" border:4px solid #0b76b8;"></div>
 					<i class="fab fa-css3 fa-2x" style="color: #0b76b8;" aria-hidden="true"></i>
 					<p> CSS</p>
 				</li>
-				<li class="skill">
+				<li class="skill" data-aos="roll-in-right">
 					<div class="round_line" style=" border:4px solid #d1af22"></div>
 					<i class="fab fa-js fa-2x" aria-hidden="true" style="color:#d1af22"></i>
 					<p> JVS</p>
 				</li>
-				<li class="skill" >
+				<li class="skill" data-aos="roll-in-right" >
 					<div class="round_line" style=" border:4px solid #000000;"></div>
 					<i class="fab fa-node fa-2x" style="color: #000000;" aria-hidden="true"></i>
 					<p> Node JS</p>
 				</li>
-				<li class="skill">
+				<li class="skill" data-aos="roll-in-right">
 					<div class="round_line" style=" border:4px solid #583d81;"></div>
 					<i class="fab fa-bootstrap fa-2x" style="color: #583d81;" aria-hidden="true"></i>
 					<p> Bootstrap</p>
 				</li>
-				<li class="skill ">
+				<li class="skill " data-aos="roll-in-right">
 					<div class="round_line" style=" border:4px solid #75b562;"></div>
 					<i class="fab fa-sass fa-2x"></i>
 					<p>SASS</p>
@@ -152,7 +152,7 @@
 	<!--  section for Projects  -->
 	<section class="projects">
 			<h2 class="title" data-aos="fade-in" data-aos-duration="800"> Featured Projects</h2>
-		<div class="project" data-aos="fade-up">
+		<div class="project" data-aos="fade-up"data-customDelay="0">
 			<!--  remember to add alt text here -->
 			<div class="img_btn_cont">
 				<img src="assets/softwareEngineer2.png" alt="" >
@@ -167,7 +167,7 @@
 				</div>
 			</div>
 		</div>
-			<div class="project" data-aos="fade-up">
+			<div class="project" data-aos="fade-up" data-customDelay="300">
 				<!--  remember to add alt text here -->
 				<div class="img_btn_cont">
 					<img src="#" alt="" >
@@ -181,7 +181,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="project" data-aos="fade-up" >
+			<div class="project" data-aos="fade-up" data-customDelay="500">
 					<!--  remember to add alt text here -->
 					<div class="img_btn_cont">
 						<img src="#" alt="" >
@@ -204,19 +204,21 @@
 	<!-- ################################## -->
 	<footer>
 		<p> <span>&copy;</span> Chukwubuka Stanley Azuka</p>
+		<div class="brag">built the portfolio myself,starting from the UI</div>
 	</footer>
 	<script src="assets/scripts/aos.js"></script>
 <script>
 	// scroll backToTop Function
 	function goTo(pix) {
-  window.scroll({
-    top: pix,
-    left: 0,
-    behavior: 'smooth'
-  });
-}
+		window.scroll({
+		top: pix,
+		left: 0,
+		behavior: 'smooth'
+	});
+	}
 	//  set the .full (preloader) to none in html so that diabled jvs browser wont get stuck on the preloader page
 	document.body.querySelector(".full").style.display = "block"
+
 	//  Loading the aos link with jvs so sites with disabled jvs will fxn okay, bcos aos sets element to none snd if jvs dont run, then the element never showws
   var head = document.getElementsByTagName('HEAD')[0];  
   var link = document.createElement('link');  
@@ -225,10 +227,10 @@
   link.href = './assets/css/aos.css';  
 
   // Append link element to HTML head 
-  head.appendChild(link); 
+  head.prepend(link); 
 	AOS.init({
 		once : true,
-		easing : "ease-out-back"
+		easing : "ease-out",
 	})
 	window.addEventListener("load", ()=>{
 		document.querySelector(".full").style.display = "none"

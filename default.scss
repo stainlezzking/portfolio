@@ -1,4 +1,4 @@
-
+    @use "_customAos.scss" ; 
 @font-face {
     font-family: "myFirstFont";
     src: url("../Font/Montserrat-Medium.ttf");
@@ -103,6 +103,7 @@ body {
     background-color: var(--bgColor);
     background-image: url("../bg_large.png");
     z-index: -10;
+    overflow-x: hidden;
     }
 .title {
     font-weight: bold;
@@ -117,7 +118,7 @@ body {
     margin: 0 auto;
     background-image: var(--bgColor);
 }
-
+    //  nav bar
 .nav {
     display: flex;
     justify-content: space-between;
@@ -162,7 +163,8 @@ body {
     padding: 2rem 0;
     img{
         width: 35%;  
-        margin-top: 40px;
+        margin-top: 150px;
+        //  this is so the nav dont cover the img on some screen sizes
     }
     .caption {
        font-size: 1.7rem;
@@ -174,12 +176,8 @@ body {
         font-size: 1.5em;
         margin-bottom: $littleSpace * 2;
         color: var(--textColor);
-        // span.paddingR is a css for jvs blinker, its been toggled in the jvs
     }
 
-    // span.paddingR {
-    //     border-right: 2px solid #ffffffa8;
-    // }
     button {
         display: block;
         padding: .7rem 1.1rem;
@@ -227,11 +225,11 @@ body {
     }
     p {
         text-align: center;
-        i {
+        span {
             cursor: pointer;
-            display: block;
+            display: inline-block;
             color:$red;
-            font-size: $littleSpace*1.4;
+            font-size: .9rem;
             &:hover{
                 color: $red_dark;
             }
@@ -299,7 +297,7 @@ body {
     }
 }
 
-//  #############status section################
+/*  #############status section ################ */
 .status {
     padding: $sectionPadding;
     box-shadow:0 0 10px darken($color: #003663 , $amount: 10);
@@ -331,13 +329,14 @@ body {
 }
 
 
-// ########### Projects section ################
+/* ########### Projects section ################ */
 
 .projects {
     padding: $sectionPadding;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
     .title {
         padding: 1rem;
         text-align: center;
@@ -431,7 +430,8 @@ footer {
     background-color:var(--bgdarken);
     padding: $littleSpace;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     box-shadow: -10px 0 10px darken($color: #003663 , $amount: 10);
     p {
         color: white;
@@ -441,20 +441,27 @@ footer {
             font-size: 1.5em;
             display: inline-block;
             margin-right: .2rem;
+           color: orange;
         }
+    }
+    .brag{
+        font-size: .65rem;
+        opacity: .6;
+        text-transform: capitalize;
     }
 
 }
 
 .backToTop{
     position: fixed;
+    display: none;
     bottom: 2rem;
     right: 1rem;
     background-color: $red;
     padding: 5px 7px;
     border-radius: 50%;
-    display: none;
     opacity: .9;
+    cursor: pointer;
     svg {
         fill: $red_dark;
     }
@@ -496,15 +503,17 @@ footer {
         font-size: 1.7rem;
     }
 
-    // banner section #######
+    /*banner section ####### */
     .banner {
      display: flex;
      flex-direction: column;
      
-     // setting up caption, fonts size reduced
+    /* setting up caption, fonts size reduced  */
+  
      img, .caption{
          width: 95%;
-         max-width: 400px;
+         max-width: 470px;
+         margin-top: 1rem;
      }
      span {
         min-height: 53px;
@@ -529,7 +538,7 @@ footer {
     }
 
 
-// project sectino
+/*project sectino */
 .projects{
     justify-content: center;
     .project {
