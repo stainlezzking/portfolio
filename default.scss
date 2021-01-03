@@ -362,8 +362,18 @@ body {
                 i {
                     color: white;
                 }
-            }
+                
+             }
+        
         }
+        &:hover .img_btn_cont::before{
+            opacity: 1;
+        }
+        &:hover .img_btn_cont a{
+                 display: inline-block;               
+            }
+
+        
     }
     .img_btn_cont {
         height: 150px;
@@ -377,12 +387,6 @@ body {
             opacity: 0;
             background-color: rgba(0, 0, 0, 0.596);
             transition: .5s ease-in-out;
-        }
-        &:hover::before {
-            opacity: 1;
-        }
-        &:hover a {
-            display: inline-block;
         }
         a {
             display: none;
