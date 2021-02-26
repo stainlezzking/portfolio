@@ -241,7 +241,7 @@ body {
 .skills{
     display: flex;
     flex-direction: column;
-    padding: 2rem 0 $sectionPadding;
+    padding: 2rem 1rem;
    .title {
        align-self: center;
        margin-bottom: $littleSpace;
@@ -342,10 +342,16 @@ body {
         text-align: center;
         flex-basis: 100%;
     }
+    .underconstruction{
+        display: none;
+    }
     .project {
         width: 30%;
         box-shadow:0 0 10px darken($color: #003663 , $amount: 10);
         border-radius: .5rem;
+        display: flex;
+        flex-direction: column;
+        position: relative;
         img {
             width: 100%;
             height: 100%;
@@ -355,10 +361,14 @@ body {
         .project_body{
             padding: 1rem;
             background-color: var(--bgdarken);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             .built_with {
                 padding-top: .3rem;
                 border-top : 2px dashed rgba(255, 255, 255, 0.448);
-                margin-top: .4rem;
+                margin-top: auto;
                 i {
                     color: white;
                 }
